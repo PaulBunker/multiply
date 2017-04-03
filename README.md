@@ -45,3 +45,7 @@ clone the repo, cd into the directory then:
 `npm install`
 
 `grunt`
+
+### Testing? ###
+
+`npm test`
