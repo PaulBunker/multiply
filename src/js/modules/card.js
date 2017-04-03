@@ -8,9 +8,11 @@ export default class Card {
   }
 
   createCard() {
+
+    // Create the html for the card, Would be nice to use jsx here
+
     const node = document.createElement('div');
     const span = document.createElement('span');
-
     const textnode = document.createTextNode(this.number);
 
     node.classList.add('card');
