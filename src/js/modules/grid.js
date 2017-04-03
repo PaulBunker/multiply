@@ -41,7 +41,7 @@ export default class Grid {
 
     this.cards.forEach(card => {
       if (this.isMultiple(card.number, activeNum)) {
-        card.addHighlight();
+        card.addHighlight(activeNum);
       } else {
         card.removeHighlight();
       }

@@ -25,10 +25,8 @@ export default class Card {
   clicked() {
     if (this.isActive) {
       this.dispatchCancelEvent();
-      this.isActive = false;
     } else {
       this.dispatchUpdateEvent();
-      this.isActive = true;
     }
   }
 
@@ -64,11 +62,16 @@ export default class Card {
     this.node.addEventListener('click', this.clicked.bind(this), false);
   }
 
-  addHighlight() {
+  addHighlight(activeNum) {
+    if (this.number === activeNum) {
+      this.isActive = true;
+    }
+
     this.node.classList.add('card__highlight');
   }
 
   removeHighlight() {
+    this.isActive = false;
     this.node.classList.remove('card__highlight');
   }
 
