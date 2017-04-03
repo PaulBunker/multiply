@@ -58,16 +58,6 @@ module.exports = function (grunt) {
             }
         },
 
-        karma: {
-            test: {
-                options: {
-                    files: ['test/**/*.js'],
-                    browsers: ['PhantomJS'],
-                    singleRun: true
-                }
-            }
-        },
-
         watch: {
             js: {
                 files: ['src/js/**/*.js'],
