@@ -1,3 +1,5 @@
+import magicString from './magisStrings';
+
 export default class Card {
 
   constructor(i) {
@@ -9,7 +11,8 @@ export default class Card {
 
   createCard() {
 
-    // Create the html for the card, Would be nice to use jsx here
+    // Create the html for the card.
+    // Would be nice to use jsx here?
 
     const node = document.createElement('div');
     const span = document.createElement('span');
@@ -34,7 +37,7 @@ export default class Card {
 
   dispatchUpdateEvent() {
 
-    const updateEvent = new CustomEvent('update', {
+    const updateEvent = new CustomEvent(magicString.UPDATE, {
       detail: {
         card: this
       },
@@ -48,7 +51,7 @@ export default class Card {
 
   dispatchCancelEvent() {
 
-    const cancelEvent = new CustomEvent('cancel', {
+    const cancelEvent = new CustomEvent(magicString.CANCEL, {
       detail: {
         card: this
       },

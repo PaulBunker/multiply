@@ -1,5 +1,5 @@
+import magicString from './magisStrings';
 import Card from './card';
-
 
 export default class Grid {
 
@@ -18,7 +18,9 @@ export default class Grid {
   }
 
   renderGrid() {
-    // Starting the loop from the number 1 rather than 0 using 'i' as readable index
+    // Starting the loop from the number 1 rather than 0
+    // using 'i' as readable index
+
     for (var i = 1; i <= this.settings.numCards; i++) {
       const card = new Card(i);
       this.cards.push(card);
@@ -49,8 +51,13 @@ export default class Grid {
   }
 
   addEventListeners() {
-    this.element.addEventListener('cancel', this.cancel.bind(this));
-    this.element.addEventListener('update', this.update.bind(this));
+    // Here we listen for the custom events
+
+    this.element.addEventListener(magicString.CANCEL,
+      this.cancel.bind(this));
+
+    this.element.addEventListener(magicString.UPDATE,
+      this.update.bind(this));
   }
 
 }
