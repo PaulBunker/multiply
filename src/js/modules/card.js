@@ -1,4 +1,4 @@
-import magicString from './magisStrings';
+import magicString from './magicStrings';
 
 export default class Card {
 
