@@ -3,13 +3,22 @@
   min-width:(100%/3);
   border:2px solid @blue;
   text-align: center;
-  padding-bottom: (100%/3);
+  min-height:2px;
   position: relative;
   font-weight: bold;
   cursor:pointer;
-  flex-grow: 1;
+  //flex-grow: 1;
+  flex: 1 0 auto;
   color: @blue;
   transition: background 0.2s ease-out;
+
+  &:after {
+    content:'';
+    float:left;
+    padding-top:100%;
+  }
+
+
   &:hover {
     color: @lightBlue;
   }

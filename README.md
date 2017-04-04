@@ -52,7 +52,7 @@ clone the repo, cd into the directory then:
 
 `npm test`
 
-TODO:
+### TODO: ###
 * livereload
 * autoprefixer
 * more tests

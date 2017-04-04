@@ -36,6 +36,19 @@ module.exports = function (grunt) {
             }
         },
 
+        postcss: {
+            options: {
+                map: true, // inline sourcemaps
+                processors: [
+                    require('autoprefixer')({browsers: 'last 6 versions'}), // add vendor prefixes
+                    require('cssnano')() // minify the result
+                ]
+            },
+            dist: {
+                src: 'dist/css/main.css'
+            }
+        },
+
         webpack: {
             main: {
                 entry: './src/js/main.js',
@@ -65,7 +78,7 @@ module.exports = function (grunt) {
             },
             css: {
                 files: ['src/css/**/*.less'],
-                tasks: ['less']
+                tasks: ['less', 'postcss']
             },
             html: {
                 files: ['src/index.html'],
@@ -75,7 +88,8 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('build', ['copy', 'less', 'webpack']);
+    grunt.registerTask('build', ['copy', 'less', 'postcss', 'webpack']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('test', ['mochaTest']);
 
 };
