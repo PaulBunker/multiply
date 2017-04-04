@@ -1,4 +1,4 @@
-import magicString from './magicStrings';
+import events from './events';
 import Card from './card';
 
 export default class Grid {
@@ -61,10 +61,10 @@ export default class Grid {
   addEventListeners() {
     // Here we listen for the custom events
 
-    this.element.addEventListener(magicString.RESET,
+    this.element.addEventListener(events.RESET,
       this.reset.bind(this));
 
-    this.element.addEventListener(magicString.UPDATE,
+    this.element.addEventListener(events.UPDATE,
       this.update.bind(this));
   }
 

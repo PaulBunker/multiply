@@ -1,4 +1,4 @@
-import magicString from './magicStrings';
+import events from './events';
 
 export default class Card {
 
@@ -37,7 +37,7 @@ export default class Card {
 
   dispatchUpdateEvent() {
 
-    const updateEvent = new CustomEvent(magicString.UPDATE, {
+    const updateEvent = new CustomEvent(events.UPDATE, {
       detail: {
         card: this
       },
@@ -51,7 +51,7 @@ export default class Card {
 
   dispatchCancelEvent() {
 
-    const cancelEvent = new CustomEvent(magicString.CANCEL, {
+    const cancelEvent = new CustomEvent(events.CANCEL, {
       detail: {
         card: this
       },
