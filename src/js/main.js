@@ -1,3 +1,4 @@
+// Polyfill for custom events used in card.js;
 import customEvents from './polyfills/customEvent';
 customEvents();
 
