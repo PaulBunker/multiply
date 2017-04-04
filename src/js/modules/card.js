@@ -5,6 +5,7 @@ export default class Card {
   constructor(i) {
     this.number = i;
     this.isActive = false;
+    this.rippleCircle;
     this.node = this.createCard();
     this.addEventListeners();
   }
@@ -18,11 +19,16 @@ export default class Card {
     const span = document.createElement('span');
     const textnode = document.createTextNode(this.number);
 
+    //element for the ripple effect
+    this.rippleCircle = document.createElement('div');
+
     node.classList.add('card');
     span.classList.add('card__text');
+    this.rippleCircle.classList.add('card__rippleCircle');
 
     span.appendChild(textnode);
     node.appendChild(span);
+    node.appendChild(this.rippleCircle);
 
     return node;
   }
@@ -33,6 +39,24 @@ export default class Card {
     } else {
       this.dispatchUpdateEvent();
     }
+  }
+
+  doRipple(e) {
+
+    // Get the position of the click
+    // relative to the element
+
+    const x = e.pageX - this.node.offsetLeft; // x position within the element
+    const y = e.pageY - this.node.offsetTop;  // y position within the element
+
+    this.rippleCircle.style.left = `${x}px`;
+    this.rippleCircle.style.top = `${y}px`;
+    this.rippleCircle.classList.add('is-active');
+
+    this.rippleCircle.addEventListener(events.ANIMATIONEND, () => {
+      this.rippleCircle.classList.remove('is-active');
+    });
+
   }
 
   dispatchUpdateEvent() {
@@ -65,6 +89,7 @@ export default class Card {
 
   addEventListeners() {
     this.node.addEventListener('click', this.clicked.bind(this), false);
+    this.node.addEventListener('click', this.doRipple.bind(this), false);
   }
 
   addHighlight(activeNum) {

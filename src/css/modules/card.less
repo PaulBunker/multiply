@@ -11,6 +11,7 @@
   flex: 1 0 auto;
   color: @blue;
   transition: background 0.1s ease-in-out;
+  overflow:hidden;
 
   &:after {
     content:'';
@@ -38,6 +39,19 @@
     }
   }
 
+  &__rippleCircle {
+    position:absolute;
+    width:200%;
+    height:200%;
+    background: rgba(255, 255, 255, .25);
+    transform: translate(-50%,-50%) scale(0,0);
+    border-radius:50%;
+    &.is-active {
+        animation: ripple .4s ease-in-out;
+    }
+  }
+
+
   @media (max-width:@mamaBear) {
     min-width:(100%/2);
     padding-bottom: (100%/2);
@@ -48,5 +62,18 @@
     padding-bottom: (100%/1);
   }
 
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%,-50%) scale(1,1);
+    opacity: 0;
+  }
 }
 
