@@ -3,7 +3,8 @@
 
 const events = {
   UPDATE: 'update',
-  RESET: 'reset'
+  RESET: 'reset',
+  ANIMATIONEND: ['animationend', 'webkitAnimationEnd', 'oanimationend', 'MSAnimationEnd']
 };
 
 export default events;

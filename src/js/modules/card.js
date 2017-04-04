@@ -51,11 +51,16 @@ export default class Card {
 
     this.rippleCircle.style.left = `${x}px`;
     this.rippleCircle.style.top = `${y}px`;
-    this.rippleCircle.classList.add('is-active');
+    this.rippleCircle.classList.add('animating');
 
-    this.rippleCircle.addEventListener(events.ANIMATIONEND, () => {
-      this.rippleCircle.classList.remove('is-active');
+    // Loop through the animation end events
+    // and attach callbacks
+    events.ANIMATIONEND.forEach( (eventName) => {
+      this.rippleCircle.addEventListener(eventName, () => {
+        this.rippleCircle.classList.remove('animating');
+      });
     });
+
 
   }
 
