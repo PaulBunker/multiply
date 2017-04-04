@@ -13,7 +13,16 @@ body {
 
 h1 {
   max-width: @siteMaxWidth;
+  width:95%;
   margin:1em auto;
   color:@highlight;
   font-size:100px;
+  @media (max-width:@mamaBear) {
+    font-size:50px;
+  }
+
+  @media (max-width:@babyBear) {
+    font-size:20px;
+  }
+
 }

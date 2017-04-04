@@ -9,6 +9,7 @@
   cursor:pointer;
   flex-grow: 1;
   color: @blue;
+  transition: background 0.2s ease-out;
   &:hover {
     color: @lightBlue;
   }
@@ -29,6 +30,15 @@
     }
   }
 
+  @media (max-width:@mamaBear) {
+    min-width:(100%/2);
+    padding-bottom: (100%/2);
+  }
+
+  @media (max-width:@babyBear) {
+    min-width:(100%/1);
+    padding-bottom: (100%/1);
+  }
 
 }
 
