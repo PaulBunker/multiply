@@ -90,6 +90,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', ['copy', 'less', 'postcss', 'webpack']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
-    grunt.registerTask('test', ['mochaTest']);
 
 };
