@@ -1,9 +1,6 @@
 import events from './events';
 import Card from './card';
 
-import customEvents from '../polyfills/customEvent';
-customEvents();
-
 export default class Grid {
 
   constructor(element, settings) {
