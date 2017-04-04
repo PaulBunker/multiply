@@ -29,7 +29,7 @@ export default class Card {
 
   clicked() {
     if (this.isActive) {
-      this.dispatchCancelEvent();
+      this.dispatchResetEvent();
     } else {
       this.dispatchUpdateEvent();
     }
@@ -49,9 +49,9 @@ export default class Card {
 
   }
 
-  dispatchCancelEvent() {
+  dispatchResetEvent() {
 
-    const cancelEvent = new CustomEvent(events.CANCEL, {
+    const resetEvent = new CustomEvent(events.RESET, {
       detail: {
         card: this
       },
@@ -59,7 +59,7 @@ export default class Card {
       cancelable: false
     });
 
-    this.node.dispatchEvent(cancelEvent);
+    this.node.dispatchEvent(resetEvent);
 
   }
 
