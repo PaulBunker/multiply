@@ -47,12 +47,18 @@ export default class Grid {
   }
 
   update(evt) {
+    // Get the 'activeNum' from the card that was clicked
     const activeNum = evt.detail.card.number;
 
+    // loop through the cards and ascertain if
+    // the card number is a multiple of 'activeNum'
     this.cards.forEach(card => {
       if (this.isMultiple(card.number, activeNum)) {
         card.addHighlight(activeNum);
       } else {
+        // We do this here so as to avoid an extra
+        // loop of the cards if we had reset the
+        // board before calling update
         card.removeHighlight();
       }
     });
