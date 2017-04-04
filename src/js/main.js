@@ -1,4 +1,4 @@
-import customEvents from '../polyfills/customEvent';
+import customEvents from './polyfills/customEvent';
 customEvents();
 
 import Grid from './modules/grid';
