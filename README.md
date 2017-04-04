@@ -11,8 +11,10 @@ Front End Technical Question
 **Description:** The application will display a grid of all the numbers from 1 to 144 evenly laid out
 with a large clickable box around each number. The number should be centered in each box.
 When the child clicks a box then all the numbers which are a multiple of that number should be
-highlighted in some way. Clicking a second time on a previously highlighted number should
-remove all highlighting from numbers that are multiples of the number that is clicked.
+highlighted in some way. *Clicking a second time on a previously highlighted number should
+remove all highlighting from numbers that are multiples of the number that is clicked.*
+
+(I think the wording of the last sentence could be better)
 
 **Constraints:** On mobile devices the grid will display 1 number per row. On tablet devices 2
 numbers per row and on desktop and larger devices 3 numbers per row. The numbers should
@@ -50,3 +52,7 @@ clone the repo, cd into the directory then:
 
 `npm test`
 
+TODO:
+* livereload
+* autoprefixer
+* more tests
