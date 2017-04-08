@@ -61,5 +61,4 @@ visit http://chromedriver.storage.googleapis.com/index.html
 
 ### TODO: ###
 * livereload
-* autoprefixer
 * more tests
