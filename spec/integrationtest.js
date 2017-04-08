@@ -17,9 +17,9 @@ describe('Multiply test:', function() {
   });
 
   // Close the website after each test is run
-  afterEach( done => {
-    this.driver.quit().then(done);
+  afterEach( () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    return this.driver.quit();
   });
 
   // Test to ensure tests work
