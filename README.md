@@ -50,7 +50,14 @@ clone the repo, cd into the directory then:
 
 ### Testing? ###
 
+For unit testing
 `npm test`
+
+For integration testing:
+Download the latest version of the ChromeDriver
+visit http://chromedriver.storage.googleapis.com/index.html
+
+`jasmine spec/integrationtest.js`
 
 ### TODO: ###
 * livereload
