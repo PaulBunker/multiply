@@ -1,20 +1,25 @@
 require('chromedriver');
 var selenium = require('selenium-webdriver');
 
+
 describe('Multiply test:', function() {
+
+  var originalTimeout;
 
   // Open the local website
   beforeEach( done => {
     this.driver = new selenium.Builder().
     withCapabilities(selenium.Capabilities.chrome()).
     build();
-
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     this.driver.get('http://localhost:8000').then(done);
   });
 
   // Close the website after each test is run
   afterEach( done => {
     this.driver.quit().then(done);
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
   });
 
   // Test to ensure we highlight the
