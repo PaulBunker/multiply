@@ -22,14 +22,20 @@ describe('Multiply test:', function() {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
   });
 
+  // Test to ensure tests work
+  it('Should highlight', done => {
+    expect(true).toBe(true);
+    done();
+  });
+
   // Test to ensure we highlight the
   it('Should highlight', done => {
     var element = this.driver.findElement(selenium.By.css('.card'));
     element.click();
     element.getAttribute('class').then(className => {
       expect(className).toBe('card card__highlight');
-      done();
     });
+    done();
   });
 
   // Test to ensure we have the right number of cards
