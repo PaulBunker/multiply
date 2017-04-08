@@ -12,7 +12,7 @@ describe('Multiply test:', function() {
     withCapabilities(selenium.Capabilities.chrome()).
     build();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
     this.driver.get('http://localhost:8000').then(done);
   });
 
