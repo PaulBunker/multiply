@@ -9,7 +9,7 @@ describe('Multiply test:', function() {
     this.driver = new selenium.Builder().
     withCapabilities(selenium.Capabilities.chrome()).
     build();
-    this.driver.get('http://localhost:8080').then(done);
+    this.driver.get('http://localhost:8000').then(done);
   });
 
   // Close the website after each test is run
@@ -23,9 +23,15 @@ describe('Multiply test:', function() {
     done();
   });
 
+  it('true is true', done => {
+    expect(true).toBe(true);
+
+    done();
+  });
+
   // Test to ensure we highlight the
   it('Should highlight', done => {
-    var element = this.driver.findElement(selenium.By.css('.card'));
+    var element = this.driver.findElement(selenium.By.className('card'));
     element.click();
     element.getAttribute('class').then(className => {
       expect(className).toBe('card card__highlight');
