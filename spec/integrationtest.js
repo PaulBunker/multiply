@@ -1,3 +1,4 @@
+require('chromedriver');
 var selenium = require('selenium-webdriver');
 
 describe('Multiply test:', function() {
