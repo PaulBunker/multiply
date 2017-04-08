@@ -9,7 +9,7 @@ describe('Multiply test:', function() {
     this.driver = new selenium.Builder().
     withCapabilities(selenium.Capabilities.chrome()).
     build();
-    this.driver.get('http://localhost:8000').then(done);
+    this.driver.get('http://localhost:8080').then(done);
   });
 
   // Close the website after each test is run
