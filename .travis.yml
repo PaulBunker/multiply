@@ -6,7 +6,7 @@ before_script:
   - "export DISPLAY=:99.0"
   - "npm i -g jasmine"
   - "npm install -g grunt-cli"
-  - "grunt"
+  - "grunt serve"
 
 script:
   - 'npm test'
