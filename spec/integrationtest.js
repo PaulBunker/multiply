@@ -30,6 +30,12 @@ describe('Multiply test:', function() {
 
   });
 
+  it('Should exist', done => {
+    var driver = this.driver;
+    var card = driver.wait(selenium.until.elementLocated(selenium.By.css('.card')));
+    card.click();
+    done();
+  });
 
 
   // Test to ensure tests work
@@ -49,12 +55,7 @@ describe('Multiply test:', function() {
     }, 5000);
   });
 
-  it('Should exist', done => {
-    var driver = this.driver;
-    var card = driver.wait(selenium.until.elementLocated(selenium.By.css('.card')));
-    card.click();
-    done();
-  });
+
 
   // Test to ensure we highlight the
   it('Should highlight', done => {
