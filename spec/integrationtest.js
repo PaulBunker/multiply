@@ -2,6 +2,11 @@ require('chromedriver');
 var selenium = require('selenium-webdriver');
 
 
+
+
+
+
+
 describe('Multiply test:', function() {
 
   var originalTimeout;
@@ -36,27 +41,46 @@ describe('Multiply test:', function() {
 
   // Test to ensure tests work
   it('Should highlight', done => {
+    var driver = this.driver;
     setTimeout(function(){
-      var hi = this.driver.findElement(selenium.By.css('.card'));
+      var hi = driver.findElement(selenium.By.css('.card'));
       expect(true).toBe(true);
       done();
-    }, 300000);
+    }, 5000);
+  });
 
-
+  it('Should exist', done => {
+    var driver = this.driver;
+    var card = driver.wait(selenium.until.elementLocated(selenium.By.css('.card')));
+    card.click();
+    done();
   });
 
   // Test to ensure we highlight the
   it('Should highlight', done => {
-    setTimeout(function(){
-      var element = this.driver.findElement(selenium.By.css('.card'));
-      element.click();
-      element.getAttribute('class').then(className => {
-        expect(className).toBe('card card__highlight');
-      });
-      done();
-    }, 300000);
-  });
+    var driver = this.driver;
+    driver.findElement(selenium.By.css('.card'))
+    .then(webElement => {
+      console.log('card exists');
+    }, err => {
+      if (err.state && err.state === 'no such element') {
+        console.log('card not found');
+      } else {
+        selenium.promise.rejected(err);
+      }
+    });
+    done();
 
+    // setTimeout(function(){
+    //   var element = this.driver.findElement(selenium.By.css('.card'));
+    //   element.click();
+    //   element.getAttribute('class').then(className => {
+    //     expect(className).toBe('card card__highlight');
+    //   });
+    //   done();
+    // }, 5000);
+  });
+  console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL);
   // // Test to ensure we have the right number of cards
   // it('Should be 144 cards', done => {
   //   setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
