@@ -42,18 +42,10 @@ describe('Multiply test:', function() {
     done();
   });
 
-  it('Should highlight', done => {
-    this.driver.wait(
-      selenium.until.elementIsVisible(this.driver.findElement(selenium.By.css('.card')),30000)
-    // element.click();
-    // element.getAttribute('class').then(className => {
-    //   expect(className).toBe('card card__highlight');
-    );
-    done();
-  });
-
   // Test to ensure we highlight the
   it('Should highlight', done => {
+    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+
     var element = this.driver.findElement(selenium.By.css('.card'));
     element.click();
     element.getAttribute('class').then(className => {
@@ -64,6 +56,8 @@ describe('Multiply test:', function() {
 
   // Test to ensure we have the right number of cards
   it('Should be 144 cards', done => {
+    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+
     this.driver.findElements(selenium.By.className('card')).then(elements => {
       expect(elements.length).toBe(144);
     });
@@ -72,6 +66,8 @@ describe('Multiply test:', function() {
 
   // Test to ensure all cards are highlighted after clicking 1'st card
   it('Should highlight all 144 cards', done => {
+    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+
     var element = this.driver.findElement(selenium.By.css('.card'));
     element.click();
     this.driver.findElements(selenium.By.className('card__highlight')).then(elements => {
@@ -82,6 +78,8 @@ describe('Multiply test:', function() {
 
   // Test to ensure cards are un-highlighted after second click
   it('Should un-highlight all the cards', done => {
+    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+
     const element = this.driver.findElement(selenium.By.css('.card'));
     element.click();
     element.click();
