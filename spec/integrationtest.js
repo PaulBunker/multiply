@@ -13,9 +13,9 @@ describe('Multiply test:', function() {
 
   // Open the local website
   beforeEach( done => {
-    this.driver = new selenium.Builder().
-      for.Browser('chrome');
-    build();
+    this.driver = new selenium.Builder()
+      .forBrowser('chrome')
+      .build();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     this.driver.get('http://localhost:8000').then(done);
@@ -68,8 +68,8 @@ describe('Multiply test:', function() {
     //   });
     //   done();
     // }, 5000);
-  });
-  console.log(jasmine.DEFAULT_TIMEOUT_INTERVAL);
+  //});
+
   // // Test to ensure we have the right number of cards
   // it('Should be 144 cards', done => {
   //   setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
