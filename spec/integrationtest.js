@@ -34,6 +34,7 @@ describe('Multiply test:', function() {
     var driver = this.driver;
     var card = driver.wait(selenium.until.elementLocated(selenium.By.css('.card')));
     card.click();
+    expect(true).toBe(true);
     done();
   });
 
@@ -45,33 +46,20 @@ describe('Multiply test:', function() {
     done();
   });
 
-  // Test to ensure tests work
-  it('Should highlight', done => {
-    var driver = this.driver;
-    setTimeout(function(){
-      var hi = driver.findElement(selenium.By.css('.card'));
-      expect(true).toBe(true);
-      done();
-    }, 5000);
-  });
+  // // Test to ensure tests work
+  // it('Should highlight', done => {
+  //   var driver = this.driver;
+  //   setTimeout(function(){
+  //     var hi = driver.findElement(selenium.By.css('.card'));
+  //     expect(true).toBe(true);
+  //     done();
+  //   }, 5000);
+  // });
 
 
 
   // Test to ensure we highlight the
   it('Should highlight', done => {
-    var driver = this.driver;
-    driver.findElement(selenium.By.css('.card'))
-    .then(webElement => {
-      console.log('card exists');
-    }, err => {
-      if (err.state && err.state === 'no such element') {
-        console.log('card not found');
-      } else {
-        selenium.promise.rejected(err);
-      }
-    });
-    done();
-
     // setTimeout(function(){
     //   var element = this.driver.findElement(selenium.By.css('.card'));
     //   element.click();
