@@ -36,22 +36,25 @@ describe('Multiply test:', function() {
 
   // Test to ensure tests work
   it('Should highlight', done => {
-    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+    setTimeout(function(){
+      var hi = this.driver.findElement(selenium.By.css('.card'));
+      expect(true).toBe(true);
+      done();
+    }, 300000);
 
-    expect(true).toBe(true);
-    done();
+
   });
 
   // Test to ensure we highlight the
   it('Should highlight', done => {
-    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
-
-    var element = this.driver.findElement(selenium.By.css('.card'));
-    element.click();
-    element.getAttribute('class').then(className => {
-      expect(className).toBe('card card__highlight');
-    });
-    done();
+    setTimeout(function(){
+      var element = this.driver.findElement(selenium.By.css('.card'));
+      element.click();
+      element.getAttribute('class').then(className => {
+        expect(className).toBe('card card__highlight');
+      });
+      done();
+    }, 300000);
   });
 
   // Test to ensure we have the right number of cards
