@@ -36,8 +36,9 @@ describe('Multiply test:', function() {
     // element.click();
     // element.getAttribute('class').then(className => {
     //   expect(className).toBe('card card__highlight');
-    });
     done();
+    });
+
   });
 
   // Test to ensure we highlight the
