@@ -4,34 +4,46 @@ var selenium = require('selenium-webdriver');
 
 describe('Multiply test:', function() {
 
+  var originalTimeout;
+
   // Open the local website
   beforeEach( done => {
     this.driver = new selenium.Builder().
     withCapabilities(selenium.Capabilities.chrome()).
     build();
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     this.driver.get('http://localhost:8000').then(done);
   });
 
+
+
   // Close the website after each test is run
   afterEach( done => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
     return this.driver.quit().then(done);
+
   });
 
-  // Test to ensure tests work
-  it('true is true', done => {
-    expect(true).toBe(true);
+  it('Should highlight', done => {
+    var element = this.driver.findElement(selenium.By.css('.card'));
+    this.driver.wait(selenium.until.elementIsVisible(element),100);
+    element.click();
+    element.getAttribute('class').then(className => {
+      expect(className).toBe('card card__highlight');
+    });
     done();
   });
 
-  it('true is true', done => {
+  // Test to ensure tests work
+  it('Should highlight', done => {
     expect(true).toBe(true);
-
     done();
   });
 
   // Test to ensure we highlight the
   it('Should highlight', done => {
-    var element = this.driver.findElement(selenium.By.className('card'));
+    var element = this.driver.findElement(selenium.By.css('.card'));
     element.click();
     element.getAttribute('class').then(className => {
       expect(className).toBe('card card__highlight');
