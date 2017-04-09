@@ -36,7 +36,8 @@ describe('Multiply test:', function() {
 
   // Test to ensure tests work
   it('Should highlight', done => {
-    var hi = this.driver.findElement(selenium.By.css('.card'));
+    setTimeout(function(){ var hi = this.driver.findElement(selenium.By.css('.card')); }, 300000);
+
     expect(true).toBe(true);
     done();
   });
