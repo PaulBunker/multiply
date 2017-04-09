@@ -29,7 +29,7 @@ describe('Multiply test:', function() {
 
   // Test to ensure tests work
   it('Should highlight', done => {
-    var hi = this.driver.findElement(selenium.By.tagName('body'));
+    var hi = this.driver.findElement(selenium.By.className('card'));
     expect(true).toBe(true);
     console.log(hi);
     done();
