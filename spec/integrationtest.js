@@ -14,7 +14,7 @@ describe('Multiply test:', function() {
   // Open the local website
   beforeEach( done => {
     this.driver = new selenium.Builder().
-    withCapabilities(selenium.Capabilities.chrome()).
+      for.Browser('chrome');
     build();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
@@ -59,7 +59,7 @@ describe('Multiply test:', function() {
 
 
   // Test to ensure we highlight the
-  it('Should highlight', done => {
+  // it('Should highlight', done => {
     // setTimeout(function(){
     //   var element = this.driver.findElement(selenium.By.css('.card'));
     //   element.click();
