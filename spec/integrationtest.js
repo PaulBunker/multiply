@@ -34,6 +34,7 @@ describe('Multiply test:', function() {
     var driver = this.driver;
     var card = driver.wait(selenium.until.elementLocated(selenium.By.css('.card')));
     card.click();
+    expect(true).toBe(true);
     done();
   });
 
@@ -45,15 +46,15 @@ describe('Multiply test:', function() {
     done();
   });
 
-  // Test to ensure tests work
-  it('Should highlight', done => {
-    var driver = this.driver;
-    setTimeout(function(){
-      var hi = driver.findElement(selenium.By.css('.card'));
-      expect(true).toBe(true);
-      done();
-    }, 5000);
-  });
+  // // Test to ensure tests work
+  // it('Should highlight', done => {
+  //   var driver = this.driver;
+  //   setTimeout(function(){
+  //     var hi = driver.findElement(selenium.By.css('.card'));
+  //     expect(true).toBe(true);
+  //     done();
+  //   }, 5000);
+  // });
 
 
 
