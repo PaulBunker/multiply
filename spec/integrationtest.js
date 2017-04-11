@@ -18,7 +18,7 @@ describe('Multiply test:', function() {
       .build();
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
-    this.driver.get('http://localhost:8000').then(done);
+    this.driver.get('http://localhost:8000/index.html').then(done);
   });
 
 
