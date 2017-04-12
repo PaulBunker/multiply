@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     base: 'dist/',
-                    keepalive: false
+                    keepalive: true
                 }
             }
         },
@@ -89,6 +89,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', ['copy', 'less', 'postcss', 'webpack']);
+    grunt.registerTask('serve', ['build', 'connect']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
 
 };

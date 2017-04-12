@@ -62,3 +62,8 @@ visit http://chromedriver.storage.googleapis.com/index.html
 ### TODO: ###
 * livereload
 * more tests
+
+
+
+### Build status
+[![Build Status](https://travis-ci.org/PaulBunker/multiply.svg?branch=master)](https://travis-ci.org/PaulBunker/multiply)
