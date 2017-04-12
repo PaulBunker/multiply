@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     base: 'dist/',
-                    keepalive: false
+                    keepalive: true
                 }
             }
         },

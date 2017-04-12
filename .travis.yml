@@ -23,7 +23,8 @@ before_install:
 before_script:
   - npm i -g jasmine
   - npm install -g grunt-cli
-  - grunt serve
+  - grunt serve &
+  - sleep 3
 
 script:
   - npm test
